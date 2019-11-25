@@ -205,3 +205,81 @@ stack.append('b')
 stack.append('c')
 
 print(stack)
+
+2nd method to use push pop peek  in stack
+
+class stacknode:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+        
+class stack:
+    def __init__(self):
+        self.root=None
+    def isempty(self):
+        return True if self.root is None else False
+    def push(self,data):
+        newnode=stacknode(data)
+        newnode.next=self.root
+        self.root=newnode
+        print("%d pushed to stack"%(data))
+    def pop(self):
+        if(self.isempty()):
+            return float("-inf")
+        temp=self.root
+        self.root=self.root.next
+        popped=temp.data
+        return popped 
+      
+    def peek(self): 
+        if self.isempty(): 
+            return float("-inf") 
+        return self.root.data
+stack = stack() 
+stack.push(10)         
+stack.push(20) 
+stack.push(30) 
+print ("%d popped from stack"%(stack.pop()))
+print ("Top element is % d " %(stack.peek()))
+
+
+
+
+factorial of a number
+
+def factorial(n):
+  fact=1
+  for i in range(1,n+1):
+    fact=fact*i
+  return fact
+
+
+x=factorial(3)
+print(x)
+x=factorial(2)
+print(x)
+n=int(input("Enter any no."))
+x=factorial(n)
+print(x)
+
+
+
+fibonacci series
+
+
+def fibonacci(n):
+    if n<0:
+        print("incorrect input")
+    elif n==1:
+        return 0
+    elif n==2:
+        return 1
+    else:
+        return fibonacci(n-1)+fibonacci(n-2)
+
+print(fibonacci(10))
+
+
+
+
+
