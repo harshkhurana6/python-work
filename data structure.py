@@ -280,6 +280,95 @@ def fibonacci(n):
 print(fibonacci(10))
 
 
+Queue using list
+
+queue=[]
+queue.append('a')
+queue.append('b')
+queue.append('c')
+
+print("Initial Queue")
+print(queue)
+
+print("\nElements poped from queue")
+print(queue.pop(0))
+print(queue.pop(0))
+print(queue.pop(0))
+
+
+print("\nQueue after elemets poped from it")
+print(queue)
+
+
+Queue using collections.dequeue
+
+from collections import deque
+q=deque()
+q.append('a')
+q.append('b')
+q.append('c')
+
+print("Intial Queue")
+print(q)
+
+print("\nElements dequeued from the queue")
+print(q.popleft())
+print(q.popleft())
+print(q.popleft())
+
+print("\nQueue after removing elements")
+print(q)
+
+
+Python program for array implementation of queue
+
+class queue:
+    def __init__(self,capacity):
+        self.front=self.size=0
+        self.rear=capacity-1
+        self.q=[None]*capacity
+        self.capacity=capacity
+
+    def isfull(self):
+        return self.size==self.capacity
+    def isempty(self):
+        return self.size==0
+    def enqueue(self,item):
+        if self.isfull():
+            print("full")
+            return
+        self.rear=(self.rear+1)%self.capacity
+        self.q[self.rear]=item
+        self.size=self.size+1
+        print("%s enqueued to queue" %str(item))
+    def dequeue(self):
+        if self.isempty():
+            print("Empty")
+            return
+        print("%s dequeued from queue" %str(self.q[self.front]))
+        self.front=(self.front+1)%(self.capacity)
+        self.size=self.size-1
+
+    def que_rear(self):
+        if self.isempty():
+            print("queue is empty")
+        print("Rear item is",self.q[self.rear])
+
+    def que_front(self):
+        if self.isempty():
+            print("queue is empty")
+        print("front item is",self.q[self.front])
+
+if __name__=='__main__':
+    Queue=queue(30)
+    Queue.enqueue(10)
+    Queue.enqueue(20)
+    Queue.enqueue(30)
+    Queue.enqueue(40)
+    Queue.dequeue()
+    Queue.que_rear()
+    Queue.que_front()
+    
 
 
 
