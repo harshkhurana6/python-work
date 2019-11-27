@@ -371,4 +371,54 @@ if __name__=='__main__':
     
 
 
+Deque with python
+
+import collections
+
+de=collections.deque([1,2,3])
+de.append(4)
+print("The deque after appending at right is:")
+print(de)
+de.appendleft(6)
+print("The deque after appending at left is:")
+print(de)
+de.pop()
+print("The deque after deleting element from right is:")
+print(de)
+de.popleft()
+print("The deque after deleting element from left is:")
+print(de)
+
+
+from collections import deque
+
+de=deque([1,4,3,3,4,2,4])
+print(de)
+print("The number 4 first occurs at a position=:")
+print(de.index(4,2,5))
+de.insert(4,3)
+print("The deque after inserting 3 at 5th position:")
+print(de)
+print("The count of 3 in deque is:")
+print(de)
+de.remove(3)
+print("The deque after deleting first occurrence of 3 is:")
+print(de)
+
+from collections import deque
+de=deque([1,2,3])
+print("The deque after exting at the end ia:")
+de.extend([4,5,6])
+print(de)
+de.extendleft([7,8,9])
+print("The deque after extending at begining is:")
+print(de)
+de.rotate(-3)
+print("The deque after rotating first three elements to the back of it is:")
+print(de)
+de.reverse()
+print("The deque after revesing is:")
+print(de)
+
+
 
