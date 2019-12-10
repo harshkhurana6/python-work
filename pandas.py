@@ -104,7 +104,7 @@ print(df.sort_values(by="Salary",ascending=False))
 print(df.sort_values(by=["Year","Ename"],ascending=False))
 df1=df.reindex(["Ecode","Ename","Salary","Year","Month"],axis=1)
 print(df1)
-or
+##or
 df1=df.reindex(columns=["Ecode","Ename","Salary","Year","Month"])
 print(df1)
 
